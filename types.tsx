@@ -1,4 +1,5 @@
 export type RootStackParamList = {
+  CoinDetails:undefined;
   Root: undefined;
   NotFound: undefined;
 };
