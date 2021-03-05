@@ -16,20 +16,20 @@ const styles = StyleSheet.create({
         flex:1,
         padding:20,
         alignItems:'center',
+        backgroundColor:'white'
     },
     image: {
-        height: '40%',
+        height: 175,
         aspectRatio:1,
     },
     title: {
-        color: '#fff',
         fontSize:20,
         fontWeight:'bold',
         marginTop: 20,
         marginBottom: 15
     },
     subtitle: {
-        color: '#fff',
+        color: '#777575',
         fontSize:20,
         textAlign:'center'
     }
