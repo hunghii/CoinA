@@ -1,23 +1,23 @@
 import React,{useState} from 'react';
 import {Text, View, StyleSheet,Image} from 'react-native';
 
-export interface PortfolioCoinProps  {
-    portfolioCoin: {
+export interface MarketCoinProps  {
+    marketCoin: {
         name: string,
         image: string,
         symbol: string,
-        amount: number,
+        valueChange24h: number,
         valueUSD: string
     }
 }
 
-const PortfolioCoin = (props : PortfolioCoinProps) => {
+const MarketCoin = (props : MarketCoinProps) => {
     const {
-      portfolioCoin : {
+      marketCoin : {
             name,    
             image,
             symbol,
-            amount,
+            valueChange24h,
             valueUSD
         },
        
@@ -33,7 +33,7 @@ const PortfolioCoin = (props : PortfolioCoinProps) => {
            </View>
             <View style={styles.right}>
                <Text style={styles.valueUSD}>{valueUSD}</Text>
-               <Text >{symbol} {amount}</Text>
+               <Text style={{color: valueChange24h > 0 ?'#4bdb00' : '#f10000'}} >{valueChange24h > 0 && '+'}{valueChange24h}</Text>
             </View>
                
        </View>
@@ -60,16 +60,16 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         marginBottom: 5
     },
-    symbol: {
-        color: '#646464',
-    },
     right: {
         alignItems:'flex-end',
     },
     valueUSD: {
         fontSize: 18,
         fontWeight:'600'
+    },
+    symbol: {
+        color: '#6b6b6b'
     }
 })
 
-export default PortfolioCoin
+export default MarketCoin

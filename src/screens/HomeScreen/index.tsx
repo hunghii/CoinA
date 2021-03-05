@@ -18,10 +18,11 @@ const styles = StyleSheet.create({
         alignItems:'center',
         backgroundColor:'white'
     },
-    image: {
-        height: 175,
-        aspectRatio:1,
-    },
+    // image: {
+    //     height: 200,
+    //     width: 300
+    //     // aspectRatio:1,
+    // },
     title: {
         fontSize:20,
         fontWeight:'bold',

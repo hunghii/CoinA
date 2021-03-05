@@ -11,7 +11,7 @@ const portfolioCoin = [
         image:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/BTC_Logo.svg/2000px-BTC_Logo.svg.png',
         symbol: 'USD',
         valueUSD: '$69.430',
-        amount: '1,38'
+        amount: 1.38
     },
     {
         id:'2',
@@ -19,7 +19,7 @@ const portfolioCoin = [
         image:'https://getblockcard.com/wp-content/uploads/2019/08/eth.png',
         symbol: 'BTC',
         valueUSD: '$70.23',
-        amount: '1,38'
+        amount: 1.38
     },
     {
         id:'3',
@@ -27,7 +27,7 @@ const portfolioCoin = [
         image:'https://otcxpert.com/wp-content/uploads/2018/10/USDT-icon.png',
         symbol: 'BTC',
         valueUSD: '$100',
-        amount: '1,38'
+        amount: 1.38
     },
     {
         id:'4',
@@ -35,24 +35,60 @@ const portfolioCoin = [
         image:'https://getblockcard.com/wp-content/uploads/2019/08/eth.png',
         symbol: 'USD',
         valueUSD: '$20.67',
-        amount: '20.67'
+        amount: 20.67
+    },
+    {
+        id:'6',
+        name:'BItcoin',
+        image:'https://getblockcard.com/wp-content/uploads/2019/08/eth.png',
+        symbol: 'USD',
+        valueUSD: '$20.67',
+        amount: 20.67
+    },
+    {
+        id:'7',
+        name:'BItcoin',
+        image:'https://getblockcard.com/wp-content/uploads/2019/08/eth.png',
+        symbol: 'USD',
+        valueUSD: '$20.67',
+        amount: 20.67
+    },{
+        id:'8',
+        name:'BItcoin',
+        image:'https://getblockcard.com/wp-content/uploads/2019/08/eth.png',
+        symbol: 'USD',
+        valueUSD: '$20.67',
+        amount: 20.67
+    },
+    {
+        id:'9',
+        name:'BItcoin',
+        image:'https://getblockcard.com/wp-content/uploads/2019/08/eth.png',
+        symbol: 'USD',
+        valueUSD: '$20.67',
+        amount: 20.67
     }
 ]
 
 const PortfolioScreen = () => {
     return (
        <View style={styles.container}>
-            <Image style={styles.image} source={image}/>
-            <View style={styles.header}>
-                <Text style={styles.title}>Portfolio balance </Text>
-                <Text style={styles.subtitle}>$69.420</Text>
-            </View> 
-            
+           
             <FlatList
                 style={{width:'100%'}}
                 data={portfolioCoin}
                 renderItem={({item})=><PortfolioCoin portfolioCoin={item} />}
-
+                ListHeaderComponentStyle = {{alignItems:'center'}}
+                showsVerticalScrollIndicator= {false}
+                ListHeaderComponent={() => (
+                    <>
+                        <Image style={styles.image} source={image}/>
+                        <View style={styles.header}>
+                            <Text style={styles.title}>Portfolio balance </Text>
+                            <Text style={styles.subtitle}>$69.420</Text>
+                        </View> 
+                    </>
+                )}
             />
         </View>
     )
