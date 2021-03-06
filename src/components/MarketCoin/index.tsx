@@ -7,7 +7,7 @@ export interface MarketCoinProps  {
         name: string,
         image: string,
         symbol: string,
-        valueChange24h: number,
+        valueChange24H: number,
         valueUSD: string
     }
 }
@@ -18,7 +18,7 @@ const MarketCoin = (props : MarketCoinProps) => {
             name,    
             image,
             symbol,
-            valueChange24h,
+            valueChange24H,
             valueUSD
         },
        
@@ -34,8 +34,7 @@ const MarketCoin = (props : MarketCoinProps) => {
            </View>
             <View style={styles.right}>
                <Text style={styles.valueUSD}>{valueUSD}</Text>
-               <PriceChange value={valueChange24h}/>
-               <Text style={{color: valueChange24h > 0 ?'#4bdb00' : '#f10000'}} >{valueChange24h > 0 && '+'}{valueChange24h}</Text>
+               <PriceChange value={valueChange24H}/>
             </View>
                
        </View>

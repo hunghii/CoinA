@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import {Text, View, StyleSheet,Image} from 'react-native';
 import { Ionicons,Entypo,AntDesign,FontAwesome5,MaterialIcons,FontAwesome } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import PriceChange from '../../components/PriceChange';
 const image = require('../../../assets/images/Saly-1.png');
 const CoinDetailsScreen = () => {
     const [isTouch, setIsTouch] = useState(false)
@@ -14,7 +15,10 @@ const CoinDetailsScreen = () => {
         name:'BItcoin',
         symbol: 'USD',
         valueUSD: '$30.6',
-        valueChange24h: 0.89
+        valueChange24H: 0.89,
+        valueChange1D :-2.11,
+        valueChange7D: 2.12,
+        currentPrice: 586.586,
     });
 
     const onPress = () => {
@@ -39,23 +43,26 @@ const CoinDetailsScreen = () => {
             </View>
             <View style={styles.pricechange24h}>  
                 
-                <View >
-                    <Text>Current price</Text> 
-                    <Text>$62.420</Text> 
+                <View  style={{alignItems:'center'}}>
+                    <Text style={styles.header}>Current price</Text> 
+                    <Text style={{fontSize: 24, fontWeight:'bold'}}>${coinData.currentPrice}</Text> 
                 </View>
-                <View>
-                    <Text>1 hour</Text> 
-                    <Text>+3.74%</Text> 
-                </View>
-                <View>
-                    <Text>1 day</Text> 
-                    <Text>+0.74%</Text> 
-                </View>
+                <View style={{flexDirection:'row', width: 200,justifyContent: 'space-between'}}>
+                    <View  style={{alignItems:'center'}}>
+                        <Text style={styles.header}>1 hour</Text> 
+                        <PriceChange value={coinData.valueChange24H} style={styles.value}/>
+                    </View>
+                    <View style={{alignItems:'center'}}>
+                        <Text style={styles.header}>1 day</Text> 
+                        <PriceChange value={coinData.valueChange1D} style={styles.value}/>
+                    </View>
 
-                <View>
-                    <Text>7 days</Text> 
-                    <Text>-0.74%</Text> 
+                    <View style={{alignItems:'center'}}>
+                        <Text style={styles.header}>7 days</Text> 
+                        <PriceChange value={coinData.valueChange7D} style={styles.value}/>
+                    </View>
                 </View>
+                
             </View>
         </View>
     )
@@ -100,6 +107,12 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
 
     },
+    header: {
+        color:'#9B9B9B'
+    },
+    value: {
+        fontSize: 18
+    }
 
     
     

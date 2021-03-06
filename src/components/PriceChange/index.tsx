@@ -4,7 +4,7 @@ import RankingsScreen from '../../screens/RankingsScreen';
 
 export interface PriceChange24HProps  {
     value: number,
-  style?: object,
+    style?: object,
 }
 
 const PriceChange = ({ value, style = {} }: PriceChange24HProps ) => {
