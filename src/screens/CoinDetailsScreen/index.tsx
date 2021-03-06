@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
-import {Text, View, StyleSheet,Image} from 'react-native';
+import {Text, View, StyleSheet,Image, Pressable} from 'react-native';
+import { useNavigation } from '@react-navigation/native'
 import { Ionicons,Entypo,AntDesign,FontAwesome5,MaterialIcons,FontAwesome } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import PriceChange from '../../components/PriceChange';
@@ -19,11 +20,19 @@ const CoinDetailsScreen = () => {
         valueChange1D :-2.11,
         valueChange7D: 2.12,
         currentPrice: 586.586,
+        amount: 2,
     });
 
     const onPress = () => {
         setIsTouch(!isTouch)
     }
+
+    const onSell = () => {
+        
+    }
+
+    const navigation = useNavigation();
+
     return (
         <View style={styles.container}>
             <View style={styles.containerTop}>
@@ -42,8 +51,7 @@ const CoinDetailsScreen = () => {
                     </View>
             </View>
             <View style={styles.pricechange24h}>  
-                
-                <View  style={{alignItems:'center'}}>
+                <View>
                     <Text style={styles.header}>Current price</Text> 
                     <Text style={{fontSize: 24, fontWeight:'bold'}}>${coinData.currentPrice}</Text> 
                 </View>
@@ -56,13 +64,23 @@ const CoinDetailsScreen = () => {
                         <Text style={styles.header}>1 day</Text> 
                         <PriceChange value={coinData.valueChange1D} style={styles.value}/>
                     </View>
-
                     <View style={{alignItems:'center'}}>
                         <Text style={styles.header}>7 days</Text> 
                         <PriceChange value={coinData.valueChange7D} style={styles.value}/>
                     </View>
                 </View>
-                
+            </View>
+            <View style={{flexDirection:'row', justifyContent: 'space-between', marginTop: 20}}>
+                <Text>Position</Text>
+                <Text>{coinData.symbol} {coinData.amount}($ {coinData.currentPrice})</Text>
+            </View>
+            <View style={styles.btn}>
+                <Pressable style={[styles.btnBt,{backgroundColor:'#5AB858',}]} onPress = {() => navigation.navigate('TradeDetails')}>
+                    <Text style={styles.btnvalue}>BUY</Text>
+                </Pressable>
+                <Pressable style={[styles.btnBt,{backgroundColor:'#DE4545'}]} onPress={onSell}>
+                    <Text style={styles.btnvalue}>SELL</Text>
+                </Pressable>
             </View>
         </View>
     )
@@ -112,10 +130,23 @@ const styles = StyleSheet.create({
     },
     value: {
         fontSize: 18
+    },
+    btn: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop: 'auto'
+    },
+    btnBt: {
+        height: 50,
+        borderRadius: 24,
+        flex:1, 
+        margin: 5,
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    btnvalue: {
+        color:'#fff'
     }
-
-    
-    
 })
 
 export default CoinDetailsScreen

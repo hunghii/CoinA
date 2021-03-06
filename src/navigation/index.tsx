@@ -8,6 +8,7 @@ import { RootStackParamList } from '../../types';
 import BottomTabNavigator from './BottomTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
 import CoinDetailsScreen from '../screens/CoinDetailsScreen';
+import TradeScreen from '../screens/TradeScreen';
 // If you are not familiar with React Navigation, we recommend going through the
 // "Fundamentals" guide: https://reactnavigation.org/docs/getting-started
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
@@ -28,18 +29,27 @@ function RootNavigator() {
   return (
     <Stack.Navigator  
       screenOptions={{
-      headerShown: false
+      // headerShown: false
     }} >
+      
+      <Stack.Screen 
+        name="Home" 
+        component={BottomTabNavigator} 
+        options={{headerShown: false}}
+      />
       <Stack.Screen
           name="CoinDetails"
           component={CoinDetailsScreen}
           options={{
             title:"Price Data"
           }}
-        />
-      <Stack.Screen 
-        name="Root" 
-        component={BottomTabNavigator} 
+      />
+      <Stack.Screen
+          name="TradeDetails"
+          component={TradeScreen}
+          options={{
+            title:"Trade Data"
+          }}
       />
       <Stack.Screen 
         name="NotFound" 

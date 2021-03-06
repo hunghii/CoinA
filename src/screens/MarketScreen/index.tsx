@@ -11,7 +11,7 @@ const marketCoin = [
         image:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/BTC_Logo.svg/2000px-BTC_Logo.svg.png',
         symbol: 'USD',
         valueUSD: '$69.430',
-        valueChange24h: -1.38
+        valueChange24H: -1.38
     },
     {
         id:'2',
@@ -19,7 +19,7 @@ const marketCoin = [
         image:'https://getblockcard.com/wp-content/uploads/2019/08/eth.png',
         symbol: 'BTC',
         valueUSD: '$70.23',
-        valueChange24h: 1.3243
+        valueChange24H: 1.3243
     },
     {
         id:'3',
@@ -27,7 +27,7 @@ const marketCoin = [
         image:'https://otcxpert.com/wp-content/uploads/2018/10/USDT-icon.png',
         symbol: 'BTC',
         valueUSD: '$100',
-        valueChange24h: -1.607
+        valueChange24H: -1.607
     },
     {
         id:'4',
@@ -35,7 +35,7 @@ const marketCoin = [
         image:'https://getblockcard.com/wp-content/uploads/2019/08/eth.png',
         symbol: 'USD',
         valueUSD: '$20.67',
-        valueChange24h: 2.67
+        valueChange24H: 2.67
     },
     {
         id:'6',
@@ -43,7 +43,7 @@ const marketCoin = [
         image:'https://getblockcard.com/wp-content/uploads/2019/08/eth.png',
         symbol: 'USD',
         valueUSD: '$0976.6',
-        valueChange24h: 5.1
+        valueChange24H: 5.1
     },
     {
         id:'7',
@@ -51,14 +51,14 @@ const marketCoin = [
         image:'https://getblockcard.com/wp-content/uploads/2019/08/eth.png',
         symbol: 'USD',
         valueUSD: '$65.99',
-        valueChange24h: 1.7
+        valueChange24H: 1.7
     },{
         id:'8',
         name:'BItcoin',
         image:'https://getblockcard.com/wp-content/uploads/2019/08/eth.png',
         symbol: 'USD',
         valueUSD: '$33.4',
-        valueChange24h: -1.304
+        valueChange24H: -1.304
     },
     {
         id:'9',
@@ -66,7 +66,7 @@ const marketCoin = [
         image:'https://getblockcard.com/wp-content/uploads/2019/08/eth.png',
         symbol: 'USD',
         valueUSD: '$30.6',
-        valueChange24h: 0.89
+        valueChange24H: 0.89
     }
 ]
 

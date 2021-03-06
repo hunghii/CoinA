@@ -1,6 +1,7 @@
 export type RootStackParamList = {
   CoinDetails:undefined;
-  Root: undefined;
+  TradeDetails:undefined;
+  Home: undefined;
   NotFound: undefined;
 };
 

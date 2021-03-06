@@ -10,7 +10,8 @@ export interface PriceChange24HProps  {
 const PriceChange = ({ value, style = {} }: PriceChange24HProps ) => {
     return (
         <Text style={[style, {color: value > 0 ? '#398f0a' : '#f10000'}]}>
-            {value > 0 ? '+' : ''}{value.toPrecision(2)}%
+            {value > 0 ? '+' : ''}{value}%
+            {/* {value.toPrecision(2)}% */}
         </Text>
     )
 }

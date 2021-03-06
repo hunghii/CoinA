@@ -66,7 +66,6 @@ const styles = StyleSheet.create({
         fontWeight:'500',
         marginBottom: 5,
         fontSize: 24,
-        fontFamily:'Roboto'
     },
     email: {
         color: '#646464',
